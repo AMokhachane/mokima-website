@@ -74,7 +74,7 @@
 
     </style>
 </head>
-
+<?php include 'navbar.php'; ?>
     <!-- VIDEO BACKGROUND -->
     <div class="video-background">
         <iframe
