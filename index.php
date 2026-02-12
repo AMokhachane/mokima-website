@@ -74,28 +74,6 @@
 
     </style>
 </head>
- <!-- SCROLL SCRIPT -->
-    <script>
-        let scrollTriggered = false;
-
-        window.addEventListener('wheel', function(e) {
-            if (!scrollTriggered && e.deltaY > 0) { // scroll down
-                scrollTriggered = true;
-                window.location.href = "songwriters.php";
-            }
-        });
-
-        // For touch devices
-        window.addEventListener('touchmove', function(e) {
-            if (!scrollTriggered) {
-                scrollTriggered = true;
-                window.location.href = "songwriters.php";
-            }
-        }, { passive: true });
-    </script>
-<body>
-    <?php include 'navbar.php'; ?>
-
 
     <!-- VIDEO BACKGROUND -->
     <div class="video-background">
