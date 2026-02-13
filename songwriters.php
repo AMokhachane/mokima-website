@@ -6,185 +6,149 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: #eee9e9;
-        }
-
-        .page-container {
-            padding-top: 90px;
-            text-align: center;
-        }
-
-        .page-container h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
-
-        .subheading {
-            color: #f0c040;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            margin-bottom: 60px;
-            text-transform: uppercase;
-        }
-
-        /* ===== Artist Section ===== */
-
-        .artist-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1300px;
-            margin: 0 auto 80px;
-            gap: 60px;
-            text-align: left;
-        }
-
-        .artist-text {
-            flex: 1;
-        }
-
-        .artist-text h2 {
-            color: #f0c040;
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .artist-text p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #333;
-        }
-
-        /* Slider */
-
-        .artist-slider {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .slider-wrapper {
-            position: relative;
-            width: 450px;
-            height: 500px;
-        }
-
-        .slider-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-            transition: opacity 0.6s ease-in-out;
-        }
-
-        .artist-bar {
-            position: absolute;
-            bottom: 0;
-            width: 50%;
-            padding: 20px 0;
-            background: #f0c040;
-            color: #fff;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-align: center;
-            border-bottom-left-radius: 20px;
-            border-top-right-radius: 60px;
-            transition: opacity 0.6s ease-in-out;
-        }
-
-        /* Button */
-        .view-more-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            font-size: 0.95rem;
-            text-decoration: none;
-            color: #f0c040;
-            border: 2px solid #f0c040;
-            border-radius: 30px;
-            letter-spacing: 1px;
-            transition: 0.3s ease;
-        }
-
-        .view-more-btn:hover {
-            background: #f0c040;
-            color: #fff;
-            transform: translateY(-3px);
-        }
-    </style>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="oursongwriters.css">  
 </head>
 <body>
 
 <?php include 'navbar.php'; ?>
 
 <div class="page-container">
-    <h1>OUR SONGWRITERS</h1>
-    <div class="subheading">Writers, Producers & Composers</div>
 
-    <div class="artist-section">
-        <div class="artist-text">
-            <h2>MAXIMIZE YOUR IMPACT.</h2>
+    <!-- ================= TOP 70% SECTION ================= -->
+    <div class="top-section">
 
-          <p>
-            Mokima Publishing is home to talented artists such as Prince Kaybee, Sykes, 
-            Boohle, Russell Zuma, Khuzani, Sir Trill, and Naledi Aphiwe, each with a strong 
-            catalogue of music and a proven presence in the industry.
-          </p>
+        <h1>OUR SONGWRITERS</h1>
+        <div class="subheading">Writers, Producers & Composers</div>
 
-          <p>
-            We support our artists at every stage of their careers, offering a hands-on, 
-            artist-first approach. From release planning to strategic marketing, 
-            our goal is to help you maximize your reach, grow your audience, and make a 
-            lasting impact with your music.
-          </p>
-        </div>
+        <!-- ================= TOP SLIDER ================= -->
 
-        <div class="artist-slider">
-            <div class="slider-wrapper">
-                <img id="sliderImage" src="assets/boohle.jpg" alt="Artist">
-                <div class="artist-bar" id="artistName">BOOHLE</div>
+        <div class="artists-carousel">
+            <div class="carousel-track" id="carouselTrack">
+
+                <div class="artist-tile">
+                    <img src="assets/boohle.jpg">
+                    <div class="tile-name">BOOHLE</div>
+                </div>
+
+                <div class="artist-tile">
+                    <img src="assets/sykes.jpeg">
+                    <div class="tile-name">SYKES</div>
+                </div>
+
+                <div class="artist-tile">
+                    <img src="assets/russell.jpg">
+                    <div class="tile-name">RUSSELL ZUMA</div>
+                </div>
+
+                <div class="artist-tile">
+                    <img src="assets/khuzani.jpg">
+                    <div class="tile-name">KHUZANI</div>
+                </div>
+
+                <div class="artist-tile">
+                    <img src="assets/sir.jpg">
+                    <div class="tile-name">SIR TRILL</div>
+                </div>
+
+                <div class="artist-tile">
+                    <img src="assets/naledi.jpg">
+                    <div class="tile-name">NALEDI APHIWE</div>
+                </div>
+
+                <div class="artist-tile">
+                    <img src="assets/vigro.jpg">
+                    <div class="tile-name">VIGRO DEEP</div>
+                </div>
+
+                <div class="artist-tile">
+                    <img src="assets/kay.jpg">
+                    <div class="tile-name">PRINCE KAYBEE</div>
+                </div>
+
+                <!-- duplicates for smooth loop -->
+                <div class="artist-tile">
+                    <img src="assets/boohle.jpg">
+                    <div class="tile-name">BOOHLE</div>
+                </div>
+
+                <div class="artist-tile">
+                    <img src="assets/sykes.png">
+                    <div class="tile-name">SYKES</div>
+                </div>
+
+                <div class="artist-tile">
+                    <img src="assets/russell.jpg">
+                    <div class="tile-name">RUSSELL ZUMA</div>
+                </div>
+
             </div>
         </div>
-    </div>
 
-    <div class="view-more-container">
-        <a href="all-artists.php" class="view-more-btn">View More</a>
     </div>
+    <!-- ================= BOTTOM 30% SERVICES ================= -->
+
+    <div class="services">
+
+        <div class="service-box">
+            <i class="fas fa-users"></i>
+            <h3>EXPERTISE AND EXPERIENCE</h3>
+            <p>
+                Mokima is reliable in music publishing and a trusted partner in 
+                music rights management. We provide professional support in 
+                sync licensing, copyright administration, A&R development, 
+                and long-term career strategy.
+            </p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-globe"></i>
+            <h3>GLOBAL REACH</h3>
+            <p>
+                Mokima is headquartered in South Africa and works with industry 
+                partners, streaming platforms, and international networks to 
+                ensure our artists' music reaches audiences across the world.
+            </p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-headphones"></i>
+            <h3>MUSIC RIGHTS MANAGEMENT</h3>
+            <p>
+                Our music rights management services ensure efficient 
+                administration of catalogues, safeguarding copyrights and 
+                maximizing revenue streams for all of our stakeholders.
+            </p>
+        </div>
+
+    </div>
+    <!-- ================= END SERVICES ================= -->
+
 </div>
 
+
 <script>
-    const artists = [
-        { name: "BOOHLE", image: "assets/boohle.jpg" },
-        { name: "SYKES", image: "assets/sykes.png" },
-        { name: "Russell Zuma", image: "assets/russell.jpg" },
-        { name: "Khuzani", image: "assets/khuzani.jpg" },
-        { name: "Sir Trill", image: "assets/sir.jpg" },
-        { name: "Naledi Aphiwe", image: "assets/naledi.jpg" },
-        { name: "Vigro Deep", image: "assets/vigro.jpg" },
-        { name: "Prince Kaybee", image: "assets/kay.jpg" }
-    ];
-
-    let currentIndex = 0;
-
-    const sliderImage = document.getElementById("sliderImage");
-    const artistName = document.getElementById("artistName");
+    const track = document.getElementById("carouselTrack");
+    const visibleTiles = 3;
+    let index = 0;
 
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % artists.length;
+        index++;
+        track.style.transform = `translateX(-${index * (100 / visibleTiles)}%)`;
 
-        sliderImage.style.opacity = 0;
-        artistName.style.opacity = 0;
+        if (index >= track.children.length - visibleTiles) {
+            setTimeout(() => {
+                track.style.transition = "none";
+                track.style.transform = "translateX(0)";
+                index = 0;
 
-        setTimeout(() => {
-            sliderImage.src = artists[currentIndex].image;
-            artistName.textContent = artists[currentIndex].name;
-            sliderImage.style.opacity = 1;
-            artistName.style.opacity = 1;
-        }, 300);
+                setTimeout(() => {
+                    track.style.transition = "transform 0.8s ease-in-out";
+                }, 50);
+
+            }, 800);
+        }
 
     }, 4000);
 </script>
