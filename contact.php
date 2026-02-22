@@ -154,10 +154,10 @@
 
     <div class="contact-info">
       <h3>Info</h3>
-      <div class="info-item">📧 info@dublintouch.com</div>
-      <div class="info-item">📞 +44 9876543</div>
-      <div class="info-item">📍 27 Blackwood Street</div>
-      <div class="info-item">🕘 09:00 – 18:00</div>
+      <div class="info-item">📧 copyright3@mokimapublishing.co.za</div>
+      <div class="info-item">📞 +27 123456789</div>
+      <div class="info-item">📍 Sloane Street</div>
+      <div class="info-item">🕘 09:00 – 17:00</div>
     </div>
   </div>
 </body>
