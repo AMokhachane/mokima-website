@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #e6e6e6; /* light grey like your screenshot */
+}
+
+/* Full page section */
+.contact-page {
+  min-height: 100vh;
+  background: #e6e6e6; /* keep same light grey */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 20px 40px; /* space for navbar */
+}
+
+/* Center content */
+.contact-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #111; /* readable dark text */
+}
+
+/* Blocks */
+.contact-block {
+  margin-bottom: 50px;
+}
+
+.contact-block h2 {
+  letter-spacing: 1.5px;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 2px;
+}
+
+.contact-block h3 {
+  color: #666; /* softer than pure black */
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.contact-block p {
+  font-size: 15px;
+  color: #333;
+  margin: 6px 0;
+}
+
+.address-block h2 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 100%;
+  max-width: 1200px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+  margin: 60px auto 0;
+}
+
+.contact-footer {
+  max-width: 1200px;
+  margin: 30px auto 0;  /* space from divider */
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  font-size: 13px;
+  gap: 40px;            /* more breathing room */
+  flex-wrap: wrap;
+}
+
+.contact-footer p {
+  letter-spacing: 0.3px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;  /* space between icons */
+}
+
+.socials a {
+  color: #444;
+  font-size: 16px;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.socials a:hover {
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-page {
+    padding-top: 100px;
+  }
+
+  .contact-block h2 {
+    font-size: 20px;
+  }
+}

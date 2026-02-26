@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>Our Songwriters</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="oursongwriters.css">  
 </head>

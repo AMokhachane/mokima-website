@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #70654b;
+    line-height: 1.6;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Headings */
+h1 {
+    font-size: 3em;
+    color: #f5f5f4; /* Brand green */
+    margin-bottom: 5px;
+}
+
+.subheading {
+    font-family: 'Patrick Hand', cursive; /* Handwriting-like font */
+    font-style: italic;                   /* Italic for playful feel */
+    font-weight: 700;                     /* Bold/thicker */
+    font-size: 1.2em;
+    color: #c7cd0e;
+    margin-bottom: 40px;
+}
+
+
+
+/* About Text */
+.about-text {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    color: #f5f2f2;
+}
+
+/* Scroll Down Icon */
+.scroll-down {
+    font-size: 2em;
+    color: #25a372;
+    margin: 30px 0;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(10px); }
+    60% { transform: translateY(5px); }
+}
+
+/* Row container for each service */
+.service-row {
+    display: flex;
+    align-items: flex-start; /* Align top of text with image */
+    gap: 20px; /* Space between image and text */
+    margin-bottom: 50px;
+}
+
+/* Image div */
+.service-image img {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+}
+
+/* Text div */
+.service-text h3 {
+    font-family: 'Patrick Hand', cursive;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #25a372;
+    margin-bottom: 10px;
+}
+
+.service-text p {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+    .service-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-image img {
+        margin-bottom: 15px;
+    }
+}
+
+
+

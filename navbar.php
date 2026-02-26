@@ -63,6 +63,4 @@
         <a href="faqs.php">FAQs</a>
         <a href="login.php">LOGIN</a>
     </div>
-    
-
 </div>
