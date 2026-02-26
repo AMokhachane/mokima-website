@@ -78,7 +78,7 @@
     <!-- VIDEO BACKGROUND -->
     <div class="video-background">
         <iframe
-            src="https://www.youtube.com/embed/hRr2UP8U1PE?autoplay=1&mute=1&controls=0&loop=1&playlist=hRr2UP8U1PE&modestbranding=1&showinfo=0"
+            src="https://www.youtube.com/embed/txCX3DeLkMQ?autoplay=1&mute=1&controls=0&loop=1&playlist=txCX3DeLkMQ&modestbranding=1&showinfo=0&start=5"
             frameborder="0"
             allow="autoplay; fullscreen">
         </iframe>

@@ -55,12 +55,12 @@
     </div>
 
     <div class="nav-links">
+        <a href="index.php">HOME</a>
         <a href="songwriters.php">OUR SONGWRITERS</a>
         <a href="playlist.php">OUR PLAYLIST</a>
         <a href="about.php">WHAT WE DO</a>
         <a href="contact.php">CONTACT US</a>
         <a href="news.php">LATEST NEWS</a>
         <a href="faqs.php">FAQs</a>
-        <a href="login.php">LOGIN</a>
     </div>
 </div>

@@ -1,215 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Playlists | Mokima Music & Publishing</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
+<meta charset="UTF-8">
+<title>Mokima Playlists</title>
 
-    body {
-      margin: 0;
-      background: #f7f7f7;
-      color: #111;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    .container {
-      max-width: 1100px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
+<style>
+/* RESET & BASE */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #e6e6e6;
+}
 
-    .header {
-      background: #111;
-      color: #fff;
-      padding: 60px 50px;
-      border-radius: 18px;
-      margin-bottom: 60px;
-      position: relative;
-      overflow: hidden;
-    }
+/* NAVBAR */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
+    text-decoration: none;
+    color: #111;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #381ab0;
+}
 
-    .header::after {
-      content: "";
-      position: absolute;
-      right: -60px;
-      top: -60px;
-      width: 160px;
-      height: 160px;
-      background: #f2a900;
-      border-radius: 24px;
-      opacity: 0.9;
-    }
+/* PAGE CONTAINER */
+.page-container {
+    height: 100vh; /* fill one screen */
+    padding: 120px 20px 20px; /* smaller top padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    font-size: 1.8rem;
+    color: #111;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.subheading {
+    font-size: 0.95rem;
+    color: #666;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
 
-    .header h1 {
-      margin: 0 0 10px;
-      font-size: 36px;
-    }
+/* TWO COLUMN LAYOUT */
+.playlist-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    flex: 1;
+    overflow: hidden; /* prevent overflow */
+}
 
-    .header p {
-      max-width: 520px;
-      opacity: 0.85;
-      line-height: 1.6;
-    }
+/* LEFT COLUMN - ICON */
+.playlist-left {
+    flex: 0 0 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.playlist-left img {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+}
 
-    .playlist-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+/* RIGHT COLUMN - PLAYLIST LIST */
+.playlist-right {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* align top */
+    height: 100%;
+    overflow: hidden;
+    gap: 12px; /* reduced spacing between items */
+}
 
-    .playlist-card {
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
-      cursor: pointer;
-    }
+.playlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 18px 22px; /* slightly bigger */
+    border-radius: 14px; /* slightly bigger radius */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12); /* slightly stronger shadow */
+    transition: transform 0.2s;
+    font-size: 0.88rem; /* slightly bigger font */
+}
 
-    .playlist-card:hover {
-      transform: translateY(-6px);
-    }
+.playlist-item:hover {
+    transform: translateY(-2px);
+}
 
-    .playlist-cover {
-      height: 160px;
-      background: linear-gradient(135deg, #f2a900, #111);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+.playlist-info h3 {
+    margin: 0 0 4px 0;
+    color: #f0c040;
+    font-size: 17px; /* slightly bigger */
+}
 
-    .playlist-body {
-      padding: 20px;
-    }
+.playlist-info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px; /* slightly bigger */
+}
 
-    .playlist-body h3 {
-      margin: 0 0 5px;
-      font-size: 18px;
-    }
+.playlist-link a {
+    font-size: 22px; /* slightly bigger Spotify icon */
+}
+.playlist-link a:hover {
+    transform: scale(1.2);
+}
 
-    .playlist-body p {
-      margin: 0;
-      font-size: 13px;
-      color: #666;
-      line-height: 1.5;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .playlist-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-
-    .tag {
-      display: inline-block;
-      margin-top: 10px;
-      background: #f2a900;
-      color: #111;
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-weight: 600;
+    .playlist-left {
+        margin-bottom: 20px;
     }
-
-    @media (max-width: 768px) {
-      .header {
-        padding: 40px 30px;
-      }
+    .playlist-left img {
+        max-width: 70%;
+        max-height: 40vh;
     }
-  </style>
+    .playlist-right {
+        width: 100%;
+    }
+    .playlist-item {
+        padding: 30px 15px;
+        font-size: 0.8rem;
+    }
+    .playlist-info h3 {
+        font-size: 15px;
+    }
+    .playlist-info p {
+        font-size: 12px;
+    }
+    .playlist-link a {
+        font-size: 18px;
+    }
+}
+</style>
 </head>
 <body>
 
-  <div class="container">
+<?php include 'navbar.php'; ?>
 
-    <!-- HEADER -->
-    <section class="header">
-      <h1>Our Playlists</h1>
-      <p>
-        Discover curated playlists featuring African composers, emerging artists,
-        and sync-ready tracks perfect for film, TV, and advertising.
-      </p>
-    </section>
+<div class="page-container">
+    <h1>MOKIMA PLAYLISTS</h1>
+    <div class="subheading">Curated Spotify Playlists from Our Catalog</div>
 
-    <!-- PLAYLISTS -->
-    <section class="playlist-grid">
-
-      <div class="playlist-card">
-        <div class="playlist-cover">SYNC</div>
-        <div class="playlist-body">
-          <h3>Sync Ready</h3>
-          <p>
-            Cinematic, emotional and commercial-ready tracks ideal for film, TV
-            and advertising placements.
-          </p>
-          <span class="tag">Film & TV</span>
+    <div class="playlist-layout">
+        <!-- LEFT: IMAGE -->
+        <div class="playlist-left">
+            <img src="assets/pip.png" alt="Listening cartoon">
         </div>
-      </div>
 
-      <div class="playlist-card">
-        <div class="playlist-cover">AFRO</div>
-        <div class="playlist-body">
-          <h3>Afro Pop Essentials</h3>
-          <p>
-            A vibrant collection of Afro-pop and contemporary African sounds
-            with global appeal.
-          </p>
-          <span class="tag">Afro Pop</span>
+        <!-- RIGHT: PLAYLIST LIST -->
+        <div class="playlist-right">
+            <div class="playlist-item">
+                <div class="playlist-info">
+                    <h3>SoulYano</h3>
+                    <p>Lost in the rhythm, found in the soul.</p>
+                </div>
+                <div class="playlist-link">
+                    <a href="https://open.spotify.com/playlist/6Gz97imVaIBfUHzDYYcAiC?si=_T5iJds0Q72p2PWcM3Uh-A" target="_blank">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="playlist-item">
+                <div class="playlist-info">
+                    <h3>Happy Month of Love</h3>
+                    <p>Happy month of love music lover.</p>
+                </div>
+                <div class="playlist-link">
+                    <a href="https://open.spotify.com/playlist/0gxT6zTw8BJiCWDZgiijHz?si=LtpGa53cQ0WPKXkB7qz6oA" target="_blank">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="playlist-item">
+                <div class="playlist-info">
+                    <h3>Revolutionary Rhythms</h3>
+                    <p>Marching to the beat of Change!</p>
+                </div>
+                <div class="playlist-link">
+                    <a href="https://open.spotify.com/playlist/6BB7hYaIWMdChARKgzKa4Q?si=wfNKvBlpTJmDDNghuTyWBA" target="_blank">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="playlist-item">
+                <div class="playlist-info">
+                    <h3>Queen's of Music</h3>
+                    <p>Celebrate Women's Month with powerful inspiring voices of women in music.</p>
+                </div>
+                <div class="playlist-link">
+                    <a href="https://open.spotify.com/playlist/6HCqaZMBjbc7elOhOhJfL6?si=aiIGCMdySwOBYATe04Grrw" target="_blank">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="playlist-item">
+                <div class="playlist-info">
+                    <h3>Heartstrings & Harmonies</h3>
+                    <p>Setting the mood for love and nostalgia.</p>
+                </div>
+                <div class="playlist-link">
+                    <a href="https://open.spotify.com/playlist/555LAwb29kYJPFOuqhb51F?si=_Y9PomQyRHSfA-KdLU5Bag" target="_blank">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="playlist-card">
-        <div class="playlist-cover">CHILL</div>
-        <div class="playlist-body">
-          <h3>Chill & Soulful</h3>
-          <p>
-            Smooth, laid-back and soulful tracks perfect for relaxed listening
-            or lifestyle content.
-          </p>
-          <span class="tag">Soul / Chill</span>
-        </div>
-      </div>
-
-      <div class="playlist-card">
-        <div class="playlist-cover">BEATS</div>
-        <div class="playlist-body">
-          <h3>Instrumental Beats</h3>
-          <p>
-            High-quality instrumentals and background music for content creators
-            and media projects.
-          </p>
-          <span class="tag">Instrumentals</span>
-        </div>
-      </div>
-
-      <div class="playlist-card">
-        <div class="playlist-cover">NEW</div>
-        <div class="playlist-body">
-          <h3>New Releases</h3>
-          <p>
-            Fresh music from our catalogue showcasing new talent and recent
-            releases.
-          </p>
-          <span class="tag">Latest</span>
-        </div>
-      </div>
-
-      <div class="playlist-card">
-        <div class="playlist-cover">ALT</div>
-        <div class="playlist-body">
-          <h3>Alternative Sounds</h3>
-          <p>
-            Unique and experimental sounds from African composers pushing
-            creative boundaries.
-          </p>
-          <span class="tag">Alternative</span>
-        </div>
-      </div>
-
-    </section>
-
-  </div>
+    </div>
+</div>
 
 </body>
 </html>
