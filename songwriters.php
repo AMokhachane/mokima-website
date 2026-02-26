@@ -182,8 +182,13 @@ h1 {
 
 <script>
 const track = document.getElementById("carouselTrack");
-const visibleTiles = 5;
+const visibleTiles = 3; // you wanted 3 per view
 let index = 0;
+
+const slideInterval = 2500; // 2.5 seconds between moves
+const slideDuration = 700; // animation speed (0.7s looks smooth)
+
+track.style.transition = `transform ${slideDuration}ms ease-in-out`;
 
 setInterval(() => {
   index++;
@@ -194,10 +199,15 @@ setInterval(() => {
       track.style.transition = "none";
       track.style.transform = "translateX(0)";
       index = 0;
-      setTimeout(() => { track.style.transition = "transform 0.8s ease-in-out"; }, 50);
-    }, 800);
+
+      setTimeout(() => {
+        track.style.transition = `transform ${slideDuration}ms ease-in-out`;
+      }, 50);
+
+    }, slideDuration);
   }
-}, 4000);
+
+}, slideInterval);
 </script>
 
 </body>
