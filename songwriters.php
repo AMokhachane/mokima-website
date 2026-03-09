@@ -152,7 +152,6 @@ h1 {
         <div class="tile-name">PRINCE KAYBEE</div>
       </div>
 
-      <!-- duplicates for smooth loop -->
       <div class="artist-tile">
         <img src="assets/boohle.jpg" alt="BOOHLE">
         <div class="tile-name">BOOHLE</div>
@@ -169,7 +168,6 @@ h1 {
     </div>
   </div>
 
-  <!-- Footer: use same contact-footer as contact page -->
   <footer class="contact-footer">
     <p>Copyright © 2022 Mokima Publishing. | All Rights Reserved.</p>
     <div class="socials">
@@ -182,11 +180,11 @@ h1 {
 
 <script>
 const track = document.getElementById("carouselTrack");
-const visibleTiles = 3; // you wanted 3 per view
+const visibleTiles = 3; 
 let index = 0;
 
-const slideInterval = 2500; // 2.5 seconds between moves
-const slideDuration = 700; // animation speed (0.7s looks smooth)
+const slideInterval = 2500; 
+const slideDuration = 700; 
 
 track.style.transition = `transform ${slideDuration}ms ease-in-out`;
 
