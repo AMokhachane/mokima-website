@@ -62,5 +62,6 @@
         <a href="contact.php">CONTACT US</a>
         <a href="news.php">LATEST NEWS</a>
         <a href="faqs.php">FAQs</a>
+        <a href="login.php">LOGIN</a>
     </div>
 </div>

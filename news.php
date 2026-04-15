@@ -1,3 +1,9 @@
+<?php
+include "db.php";
+
+$result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,27 +24,28 @@
 
     .news-page {
       min-height: 100vh;
-  padding: 90px 20px 40px; /* space for navbar */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* carousel center, footer bottom */
-  align-items: center;
+      padding: 90px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
     }
-h1 {
-  font-size: 1.8rem;
-  color: #111;
-  margin-bottom: 5px;
-  text-align: center;
-}
 
-.subheading {
-  font-size: 0.95rem;
-  color: #666;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  text-align: center;
-}
+    h1 {
+      font-size: 1.8rem;
+      color: #111;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .subheading {
+      font-size: 0.95rem;
+      color: #666;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-align: center;
+    }
 
     /* NEWS GRID */
     .news-grid {
@@ -105,7 +112,7 @@ h1 {
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: #405af0; /* Mokima accent */
+      color: #405af0;
       align-self: flex-start;
       transition: color 0.15s ease;
     }
@@ -114,7 +121,7 @@ h1 {
       color: #2c3fbf;
     }
 
-    /* FOOTER (same as contact page) */
+    /* FOOTER */
     .divider {
       width: 100%;
       max-width: 1200px;
@@ -125,8 +132,6 @@ h1 {
 
     .contact-footer {
       max-width: 1200px;
-      
-      
       padding-top: 10px;
       display: flex;
       justify-content: center;
@@ -171,55 +176,51 @@ h1 {
     }
   </style>
 </head>
+
 <body>
 
 <?php include 'navbar.php'; ?>
 
 <div class="news-page">
+
   <div>
     <h1>NEWS</h1>
     <div class="subheading">Latest updates from Mokima Publishing</div>
   </div>
 
+  <!-- ✅ DYNAMIC NEWS START -->
   <div class="news-grid">
 
-    <div class="news-card">
-      <img src="assets/shake.jpg" alt="News 1">
-      <div class="news-content">
-        <div class="news-meta">Press Release · 20 Feb 2026</div>
-        <div class="news-title">Mokima Publishing Signs New Songwriters</div>
-        <div class="news-excerpt">
-          We are proud to welcome new talent to the Mokima Publishing family, expanding our growing catalogue of exceptional writers and producers.
-        </div>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-    </div>
+    <?php while ($row = $result->fetch_assoc()) { ?>
 
-    <div class="news-card">
-      <img src="assets/boy.jpg" alt="News 2">
-      <div class="news-content">
-        <div class="news-meta">Sync · 05 Feb 2026</div>
-        <div class="news-title">Mokima Music Featured in National Campaign</div>
-        <div class="news-excerpt">
-          Our catalogue was selected for a major advertising campaign, bringing local music to a nationwide audience.
-        </div>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-    </div>
+      <div class="news-card">
 
-    <div class="news-card">
-      <img src="assets/download.jpg" alt="News 3">
-      <div class="news-content">
-        <div class="news-meta">Industry · 18 Jan 2026</div>
-        <div class="news-title">Songwriting Camp Sparks New Collaborations</div>
-        <div class="news-excerpt">
-          Our latest songwriting camp brought together artists, producers and composers to create exciting new material.
+        <img src="assets/default.jpg" alt="News Image">
+
+        <div class="news-content">
+
+          <div class="news-meta">
+            Press Release · <?php echo date("d M Y", strtotime($row['created_at'])); ?>
+          </div>
+
+          <div class="news-title">
+            <?php echo $row['title']; ?>
+          </div>
+
+          <div class="news-excerpt">
+            <?php echo substr($row['content'], 0, 150); ?>...
+          </div>
+
+          <a href="#" class="read-more">Read More →</a>
+
         </div>
-        <a href="#" class="read-more">Read More →</a>
+
       </div>
-    </div>
+
+    <?php } ?>
 
   </div>
+  <!-- ✅ DYNAMIC NEWS END -->
 
   <div class="divider"></div>
 
