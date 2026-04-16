@@ -111,7 +111,7 @@
 <!-- VIDEO BACKGROUND -->
 <div class="video-background">
     <iframe
-        src="https://www.youtube.com/embed/txCX3DeLkMQ?autoplay=1&mute=1&controls=0&loop=1&playlist=txCX3DeLkMQ&modestbranding=1&showinfo=0&start=6"
+        src="https://www.youtube.com/embed/QjIyQSNH73w?autoplay=1&mute=1&controls=0&loop=1&playlist=QjIyQSNH73w&modestbranding=1&showinfo=0&start=50"
         frameborder="0"
         allow="autoplay; fullscreen">
     </iframe>

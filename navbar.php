@@ -6,7 +6,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 15px 40px;
+    padding: 10px 30px;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(5px);
     z-index: 1000;
@@ -24,14 +24,14 @@
 
 .logo h1 {
     color: white;
-    font-size: 1.3rem;
+    font-size: 20px;
     margin: 0;
     letter-spacing: 2px;
 }
 
 .nav-links {
     display: flex;
-    margin-left: 300px;
+    margin-left: 200px;
 }
 
 .nav-links a {

@@ -124,9 +124,7 @@ border-radius:12px;
 <div class="player-container">
 
 <!-- PLAYLIST CARDS -->
-<div class="music-card" data-index="0">
-<img src="assets/soul.jpg">
-</div>
+
 
 <div class="music-card" data-index="1">
 <img src="assets/p2.jpg">
@@ -134,6 +132,10 @@ border-radius:12px;
 
 <div class="music-card" data-index="2">
 <img src="assets/p3.jpg">
+</div>
+
+<div class="music-card" data-index="0">
+<img src="assets/soul.jpg">
 </div>
 
 <div class="music-card" data-index="3">
@@ -166,9 +168,10 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 
 const playlists = [
 
-"https://open.spotify.com/embed/playlist/6Gz97imVaIBfUHzDYYcAiC",
+
 "https://open.spotify.com/embed/playlist/0gxT6zTw8BJiCWDZgiijHz",
 "https://open.spotify.com/embed/playlist/6BB7hYaIWMdChARKgzKa4Q",
+"https://open.spotify.com/embed/playlist/6Gz97imVaIBfUHzDYYcAiC",
 "https://open.spotify.com/embed/playlist/6HCqaZMBjbc7elOhOhJfL6",
 "https://open.spotify.com/embed/playlist/555LAwb29kYJPFOuqhb51F"
 

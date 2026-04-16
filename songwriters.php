@@ -120,6 +120,18 @@ h1 {
     <div class="carousel-track" id="carouselTrack">
 
       <div class="artist-tile">
+        <img src="assets/goon.jpg" alt="GOON FLAVOUR">
+        <div class="tile-name">Goon Flavour</div>
+      </div>
+      <div class="artist-tile">
+        <img src="assets/sir.jpg" alt="SIR TRILL">
+        <div class="tile-name">SIR TRILL</div>
+      </div>
+      <div class="artist-tile">
+        <img src="assets/naledi.jpg" alt="NALEDI APHIWE">
+        <div class="tile-name">NALEDI APHIWE</div>
+      </div>
+      <div class="artist-tile">
         <img src="assets/boohle.jpg" alt="BOOHLE">
         <div class="tile-name">BOOHLE</div>
       </div>
@@ -132,20 +144,8 @@ h1 {
         <div class="tile-name">RUSSELL ZUMA</div>
       </div>
       <div class="artist-tile">
-        <img src="assets/khuzani.jpg" alt="KHUZANI">
-        <div class="tile-name">KHUZANI</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/sir.jpg" alt="SIR TRILL">
-        <div class="tile-name">SIR TRILL</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/naledi.jpg" alt="NALEDI APHIWE">
-        <div class="tile-name">NALEDI APHIWE</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/vigro.jpg" alt="VIGRO DEEP">
-        <div class="tile-name">VIGRO DEEP</div>
+        <img src="assets/beast.jpg" alt="BEAST RSA">
+        <div class="tile-name">BEAST RSA</div>
       </div>
       <div class="artist-tile">
         <img src="assets/kay.jpg" alt="PRINCE KAYBEE">

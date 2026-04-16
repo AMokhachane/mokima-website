@@ -195,7 +195,7 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
 
       <div class="news-card">
 
-        <img src="assets/default.jpg" alt="News Image">
+        <img src="assets/<?php echo $row['image']; ?>" alt="News Image">
 
         <div class="news-content">
 
@@ -211,7 +211,9 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
             <?php echo substr($row['content'], 0, 150); ?>...
           </div>
 
-          <a href="#" class="read-more">Read More →</a>
+          <a href="view.php?id=<?php echo $row['id']; ?>" class="read-more">
+  Read More →
+</a>
 
         </div>
 
