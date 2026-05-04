@@ -174,8 +174,7 @@ button:hover {
         <button type="submit" name="add">Publish News</button>
     </form>
 </div>
-
-<!-- EXISTING NEWS -->
+  
 <div class="card">
     <h3 style="margin-bottom:15px;">Existing News</h3>
 

@@ -18,55 +18,43 @@
       <h1 class="faq-title">FAQ</h1>
 
       <div class="faq-item">
-        <h3>1. What is Copyright?</h3>
-        <p>Copyright is a type of intellectual property that gives the owner the exclusive right to copy, distribute, adapt, display, and perform a creative work.</p>
+        <h3>1. What is Music Publishing?</h3>
+        <p>Music publishing is the management, licensing, and monetization of musical compositions (lyrics
+            and melodies), ensuring composers and songwriters get paid for their work.</p>
       </div>
 
       <div class="faq-item">
-        <h3>2. What is a Songwriter?</h3>
-        <p>A songwriter is someone involved in the creation of a musical work, writing the music or lyrics.</p>
+        <h3>2. What is the difference between Masters and Publishing?</h3>
+        <p>Every song has two distinct copyrights:</p>
+        <p>Publishing covers the "song" itself: the lyrics, melody, and composition. This is typically owned
+by the songwriters, composers or publishers.</p>
+        <p>Masters cover the specific "sound recording" of that song: the actual audio file you hear. This is
+typically owned by the performing artist or record label..</p>
       </div>
 
       <div class="faq-item">
-        <h3>3. What is a Publisher?</h3>
-        <p>A publisher is an entity that controls how a musical composition is used and monetized. Publishers pitch the works that they control and license them for TV, Film, and other platforms.</p>
+        <h3>3. What are Collective Management Organistios (CMO’s)?</h3>
+        <p>Collective Management Organisations (CMOs) are private, often non-profit organizations that
+manage copyright and related rights on behalf of creators (authors, performers, publishers)</p>
+        <p>● SAMPRA administers Needletime/Neighbouring Rights on behalf of recording
+artists and recording companies for sound recordings.</p>
+        <p>● SAMRO administers Performing Rights on behalf of authors, composers, and
+publishers of musical works.</p>
+        <p>● CAPASSO administers Mechanical Rights on behalf of authors, composers, and
+publishers of musical works.</p>
+       </div>
+
+      <div class="faq-item">
+        <h3>4.  Who needs a publisher?</h3>
+        <p>Established composers and songwriters with an active catalogue.</p>
       </div>
 
       <div class="faq-item">
-        <h3>4. What is a Recording Artist?</h3>
-        <p>A recording artist is someone involved in the creation of sound recordings. They can also be a songwriter, lyricist, or composer.</p>
+        <h3>5. What is the difference between distribution and publishing?</h3>
+        <p>Publishing manages the underlying rights, registration, and royalties of the songwriting
+composition (lyrics and melody), while distribution focuses on delivering the final master
+recording to streaming platforms (Spotify, Apple Music) and collecting sales/streaming revenue.</p>
       </div>
-
-      <div class="faq-item">
-        <h3>5. Why should I use Mokima Publishing as my Publisher?</h3>
-        <ul>
-          <li>Mokima Publishing pays royalties every three (3) months.</li>
-          <li>Efficiency in data management.</li>
-          <li>Assists with administration with the relevant Collecting Management Organisations.</li>
-          <li>Facilitates resolution in song disputes.</li>
-        </ul>
-      </div>
-
-      <div class="faq-item">
-        <h3>6. Does Mokima collect royalties internationally?</h3>
-        <p>Yes, Mokima Publishing collects royalties all over the world.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>7. Can Mokima Publishing place my music on digital platforms?</h3>
-        <p>Mokima Publishing does not place music on digital platforms. You can use an online distributor such as Electromode or Ingrooves to place your content on these platforms.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>8. What is a Synchronization License?</h3>
-        <p>A synchronization license is permission to incorporate a musical work and sound recording into an audio-visual work, such as a TV show, video game, or movie.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>9. What does it mean for a work to be in the Public Domain?</h3>
-        <p>A work is in the Public Domain if it is no longer under Copyright Protection. Works in the Public Domain can be used freely without permission.</p>
-      </div>
-
     </div>
 
     <footer class="faq-footer">
