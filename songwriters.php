@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Our Songwriters</title>
 
 <style>
-/* RESET & BASE */
+
+/* RESET */
 * {
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -15,18 +18,19 @@ body {
   margin: 0;
   min-height: 100vh;
   background: #e6e6e6;
+  overflow-x: hidden;
 }
 
-/* Page container fills screen minus navbar */
+/* PAGE WRAPPER */
 .page-container {
   min-height: 100vh;
-  padding: 140px 20px 40px; /* space for navbar */
+  padding: 140px 20px 60px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* carousel center, footer bottom */
   align-items: center;
 }
 
+/* TITLE */
 h1 {
   font-size: 1.8rem;
   color: #111;
@@ -43,169 +47,205 @@ h1 {
   text-align: center;
 }
 
-/* Carousel */
+/* ===== CAROUSEL ===== */
 .artists-carousel {
-      overflow: hidden;
-      width: 80%;
-      padding: 5px 0;
-    }
+  overflow: hidden;
+  width: 85%;
+  max-width: 1100px;
+}
 
-    .carousel-track {
-      display: flex;
-      transition: transform 0.8s ease-in-out;
-    }
+.carousel-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
 
-    .artist-tile {
-    position: relative; /* ensures child can be absolute */
-    flex: 0 0 calc(100% / 3);
-    padding: 5px;
+/* DESKTOP */
+.artist-tile {
+  position: relative;
+  flex: 0 0 calc(100% / 3);
+  padding: 8px;
 }
 
 .artist-tile img {
-    width: 100%;
-    height: 330px; /* increase size if needed */
-    object-fit: cover;
-    border-radius: 15px;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
+/* NAME */
 .tile-name {
-    position: absolute;
-    bottom: 10px; /* sits near bottom of image */
-    left: 36%;
-    transform: translateX(-50%);
-    background: rgba(190, 202, 21, 0.6); /* semi-transparent black */
-    color: white;
-    padding: 6px 12px;
-    width: 70%;
-    font-weight: bold;
-    font-size: 0.95rem;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    text-align: center;
-    letter-spacing: 1px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(190, 202, 21, 0.6);
+  color: white;
+  padding: 6px 12px;
+  width: 75%;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  text-align: center;
 }
 
-/* Responsive */
-    @media (max-width: 900px) {
-      .artist-tile {
-        flex: 0 0 50%;
-      }
-      .artist-tile img {
-        height: 200px;
-      }
-    }
+/* FOOTER */
+.contact-footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #333;
+}
 
-    @media (max-width: 600px) {
-      .artist-tile {
-        flex: 0 0 100%;
-      }
-      .artist-tile img {
-        height: 180px;
-      }
-    }
+/* ===== TABLET ===== */
+@media (max-width: 900px) {
+  .artist-tile {
+    flex: 0 0 50%;
+  }
+
+  .artist-tile img {
+    height: 250px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+
+  .page-container {
+    padding-top: 120px;
+  }
+
+  .artist-tile {
+    flex: 0 0 100%;
+  }
+
+  .artist-tile img {
+    height: 240px;
+  }
+
+  .tile-name {
+    font-size: 0.85rem;
+    width: 85%;
+  }
+
+  .artists-carousel {
+    width: 95%;
+  }
+}
+
 </style>
 </head>
+
 <body>
 
 <?php include 'navbar.php'; ?>
 
 <div class="page-container">
+
   <div>
     <h1>OUR SONGWRITERS</h1>
     <div class="subheading">Writers, Producers & Composers</div>
   </div>
 
-  <!-- Carousel -->
+  <!-- CAROUSEL -->
   <div class="artists-carousel">
     <div class="carousel-track" id="carouselTrack">
 
       <div class="artist-tile">
-        <img src="assets/goon.jpg" alt="GOON FLAVOUR">
+        <img src="assets/goon.jpg">
         <div class="tile-name">Goon Flavour</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/sir.jpg" alt="SIR TRILL">
-        <div class="tile-name">SIR TRILL</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/naledi.jpg" alt="NALEDI APHIWE">
-        <div class="tile-name">NALEDI APHIWE</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/boohle.jpg" alt="BOOHLE">
-        <div class="tile-name">BOOHLE</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/sykes.jpeg" alt="SYKES">
-        <div class="tile-name">SYKES</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/russell.jpg" alt="RUSSELL ZUMA">
-        <div class="tile-name">RUSSELL ZUMA</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/beast.jpg" alt="BEAST RSA">
-        <div class="tile-name">BEAST RSA</div>
-      </div>
-      <div class="artist-tile">
-        <img src="assets/kay.jpg" alt="PRINCE KAYBEE">
-        <div class="tile-name">PRINCE KAYBEE</div>
       </div>
 
       <div class="artist-tile">
-        <img src="assets/boohle.jpg" alt="BOOHLE">
+        <img src="assets/sir.jpg">
+        <div class="tile-name">SIR TRILL</div>
+      </div>
+
+      <div class="artist-tile">
+        <img src="assets/naledi.jpg">
+        <div class="tile-name">NALEDI APHIWE</div>
+      </div>
+
+      <div class="artist-tile">
+        <img src="assets/boohle.jpg">
         <div class="tile-name">BOOHLE</div>
       </div>
+
       <div class="artist-tile">
-        <img src="assets/sykes.png" alt="SYKES">
-        <div class="tile-name">SYKES</div>
+        <img src="assets/amzin.jpg">
+        <div class="tile-name">AMZIN DEEP</div>
       </div>
+
       <div class="artist-tile">
-        <img src="assets/russell.jpg" alt="RUSSELL ZUMA">
+        <img src="assets/russell.jpg">
         <div class="tile-name">RUSSELL ZUMA</div>
+      </div>
+
+      <div class="artist-tile">
+        <img src="assets/beast.jpg">
+        <div class="tile-name">BEAST RSA</div>
+      </div>
+
+      <div class="artist-tile">
+        <img src="assets/kay.jpg">
+        <div class="tile-name">PRINCE KAYBEE</div>
       </div>
 
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer class="contact-footer">
     <p>Copyright © 2022 Mokima Publishing. | All Rights Reserved.</p>
-    <div class="socials">
-      <a href="https://www.facebook.com/MokimaPublishing" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.tiktok.com/@mokima_publishing" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/mokimapublishing" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    </div>
   </footer>
+
 </div>
 
+<!-- ===== CAROUSEL SCRIPT (FIXED RESPONSIVE LOGIC) ===== -->
 <script>
+
 const track = document.getElementById("carouselTrack");
-const visibleTiles = 3; 
 let index = 0;
 
-const slideInterval = 2500; 
-const slideDuration = 700; 
+function getVisibleTiles() {
+  if (window.innerWidth <= 600) return 1;
+  if (window.innerWidth <= 900) return 2;
+  return 3;
+}
 
-track.style.transition = `transform ${slideDuration}ms ease-in-out`;
+function slideCarousel() {
+  const visibleTiles = getVisibleTiles();
 
-setInterval(() => {
   index++;
+
   track.style.transform = `translateX(-${index * (100 / visibleTiles)}%)`;
 
   if (index >= track.children.length - visibleTiles) {
+
     setTimeout(() => {
       track.style.transition = "none";
       track.style.transform = "translateX(0)";
       index = 0;
 
       setTimeout(() => {
-        track.style.transition = `transform ${slideDuration}ms ease-in-out`;
+        track.style.transition = "transform 0.8s ease-in-out";
       }, 50);
 
-    }, slideDuration);
+    }, 800);
   }
+}
 
-}, slideInterval);
+setInterval(slideCarousel, 2500);
+
+window.addEventListener("resize", () => {
+  track.style.transition = "none";
+  track.style.transform = "translateX(0)";
+  index = 0;
+
+  setTimeout(() => {
+    track.style.transition = "transform 0.8s ease-in-out";
+  }, 50);
+});
+
 </script>
 
 </body>
