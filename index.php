@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Mokima Publishing</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        /* BASE */
         * {
             box-sizing: border-box;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -20,9 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* NAVBAR already included from navbar.php */
-
-        /* VIDEO BACKGROUND */
+        /* ===== VIDEO BACKGROUND ===== */
         .video-background {
             position: fixed;
             top: 0;
@@ -34,31 +33,38 @@
         }
 
         .video-background iframe {
-            width: 100vw;
-            height: 100vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120vw;
+            height: 120vh;
+            transform: translate(-50%, -50%);
             pointer-events: none;
         }
 
+        /* DARK OVERLAY */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.45); /* slightly darker for contrast */
+            background: rgba(0, 0, 0, 0.55);
             z-index: 0;
         }
 
-        /* CENTERED CONTENT */
+        /* ===== CONTENT ===== */
         .content {
             position: relative;
             z-index: 1;
             text-align: center;
             color: white;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
             height: 100vh;
             padding: 0 20px;
         }
@@ -66,7 +72,6 @@
         .content h1 {
             font-size: 3rem;
             margin-bottom: 15px;
-            color: #fff;
             line-height: 1.2;
             max-width: 900px;
         }
@@ -80,7 +85,7 @@
 
         .scroll-hint a {
             font-size: 2rem;
-            color: #405af0; /* Mokima accent color */
+            color: #405af0;
             text-decoration: none;
             animation: bounce 1.5s infinite;
         }
@@ -90,20 +95,35 @@
             50% { transform: translateY(15px); }
         }
 
-        /* RESPONSIVE */
+        /* ===== MOBILE ===== */
         @media (max-width: 768px) {
-            .content h1 {
-                font-size: 2rem;
+
+            .content {
+                padding-top: 80px;
             }
+
+            .content h1 {
+                font-size: 1.8rem;
+                padding: 0 10px;
+            }
+
             .content p {
                 font-size: 1rem;
+                padding: 0 15px;
             }
+
             .scroll-hint a {
                 font-size: 1.5rem;
+            }
+
+            .video-background iframe {
+                width: 180vw;
+                height: 180vh;
             }
         }
     </style>
 </head>
+
 <body>
 
 <?php include 'navbar.php'; ?>
@@ -123,6 +143,7 @@
 <div class="content">
     <h1>Where Music Finds Its Voice</h1>
     <p>Publishing. Licensing. Artist Development.</p>
+
     <div class="scroll-hint">
         <a href="songwriters.php">&#x2193;</a>
     </div>
