@@ -2,200 +2,142 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>About Mokima Publishing</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Services</title>
 
 <style>
-:root {
-  --cta-margin-top: 10px;
-  --cta-margin-bottom: 3px;
-  --footer-margin-top: 3px;
-}
 
 /* RESET */
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Segoe UI", sans-serif;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background:#f4f5f7;
-  color:#333;
-  line-height:1.6;
+  margin: 0;
+  min-height: 100vh;
+  background: #e6e6e6;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
-nav {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:#fff;
-  padding:15px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 8px rgba(0,0,0,0.08);
-  z-index:100;
+/* PAGE WRAPPER */
+.page-container {
+  min-height: 100vh;
+  padding: 140px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-nav a {
-  text-decoration:none;
-  margin:0 15px;
-  font-weight:600;
-  color:#111;
+/* TITLE */
+h1 {
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
-nav a:hover {
-  color:#381ab0;
+.subheading {
+  font-size: 0.95rem;
+  color: #666;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
-/* HERO */
-.hero {
-  background: linear-gradient(135deg,#f0c04033,#ffffff);
-  text-align:center;
-  padding: 120px 20px 80px;
+/* SERVICES WRAPPER */
+.services-wrapper {
+  display: flex;
+  width: 85%;
+  max-width: 1100px;
+  gap: 20px;
 }
 
-.hero h1 {
-  font-size:3rem;
-  margin-bottom:10px;
+/* LEFT DETAILS */
+.service-details {
+  flex: 2;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  min-height: 280px;
 }
 
-.hero .subheading {
-  font-size:1.1rem;
-  text-transform:uppercase;
-  color:#666;
+.service-details h3 {
+  font-size: 1.3rem;
+  color: #111;
+  margin-bottom: 12px;
 }
 
-/* SECTIONS */
-.section {
-  max-width:1100px;
-  margin: 60px auto;
-  padding: 0 20px;
+.service-details p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
-.section h2 {
-  color:#f0c040;
-  font-size:2rem;
-  margin-bottom:25px;
-  text-align:center;
+/* RIGHT MENU */
+.service-menu {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  height: fit-content;
 }
 
-.section p {
-  margin-bottom:18px;
-  text-align:center;
+.service-menu h3 {
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  color: #333;
+  text-transform: uppercase;
 }
 
-.highlight {
-  background:#fff6cc;
-  padding:3px 6px;
-  border-radius:4px;
+/* ITEMS */
+.service-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #f3f3f3;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.2s;
 }
 
-/* FEATURES */
-.features {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-top:50px;
-  gap:25px;
+.service-item:hover {
+  background: #e8e8ff;
 }
 
-.feature-card {
-  background:#fff;
-  flex:1 1 200px;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  transition:.3s;
-  text-align:center;
-}
-
-.feature-card:hover {
-  transform:translateY(-5px);
-  box-shadow:0 8px 18px rgba(0,0,0,0.12);
-}
-
-.feature-card i {
-  font-size:2rem;
-  color:#381ab0;
-  margin-bottom:12px;
-  display:block;
-}
-
-/* CTA */
-.cta-section {
-  background:#f4f5f7;
-  color:#f0c040;
-  text-align:center;
-  padding:80px 20px;
-  border-radius:14px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  margin: var(--cta-margin-top) auto var(--cta-margin-bottom) auto;
-}
-
-.cta-section h2 {
-  margin-bottom:25px;
-}
-
-.cta-section p {
-  margin-bottom:30px;
-}
-
-.cta-section a {
-  background:#f0c040;
-  color:#111;
-  padding:12px 30px;
-  border-radius:8px;
-  font-weight:600;
-  text-decoration:none;
-}
-
-.cta-section a:hover {
-  background:#d1a800;
+.service-item.active {
+  background: #381ab0;
+  color: #fff;
 }
 
 /* FOOTER */
-footer {
-  text-align:center;
-  padding:40px 20px;
-  color:#555;
-  font-size:13px;
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-  align-items:center;
-  margin-top: var(--footer-margin-top);
-}
-
-footer .socials {
-  display:flex;
-  gap:16px;
-}
-
-footer .socials a {
-  color:#444;
-  font-size:18px;
-}
-
-footer .socials a:hover {
-  color:#000;
-  transform:translateY(-2px);
+.contact-footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #333;
+  font-size: 0.85rem;
 }
 
 /* RESPONSIVE */
-@media(max-width:900px){
-  .features {
-    flex-direction:column;
-    align-items:center;
+@media (max-width: 900px) {
+  .services-wrapper {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .service-details {
+    order: 2;
+  }
+
+  .service-menu {
+    order: 1;
   }
 }
+
 </style>
 </head>
 
@@ -203,72 +145,84 @@ footer .socials a:hover {
 
 <?php include 'navbar.php'; ?>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>About Mokima Publishing</h1>
-  <div class="subheading">Supporting Songwriters, Authors & Publishers</div>
-</div>
+<div class="page-container">
 
-<!-- WHO WE ARE -->
-<div class="section">
-  <h2>Who We Are</h2>
-  <p>
-    Established in 2002, we are an independent South African music publishing company dedicated to supporting composers, authors, and publishers in managing their musical works. Our services include <span class="highlight">licensing, royalty collection, and fee negotiation</span>.
-  </p>
-  <p>
-    We actively promote songs for advertising, film, and promotional campaigns, and facilitate <span class="highlight">songwriter collaborations</span> to foster creativity.
-  </p>
-</div>
+  <div>
+    <h1>OUR SERVICES</h1>
+    <div class="subheading">Publishing, Rights & Royalty Management</div>
+  </div>
 
-<!-- SUPPORT -->
-<div class="section">
-  <h2>How We Support You</h2>
+  <!-- SERVICES -->
+  <div class="services-wrapper">
 
-  <div class="features">
-    <div class="feature-card">
-      <i class="fas fa-coins"></i>
+    <!-- LEFT -->
+    <div class="service-details" id="serviceDetails">
       <h3>Maximising Royalties</h3>
+      <p>
+        We ensure you receive every cent owed by tracking, collecting, and optimising your royalty streams across all platforms and territories.
+      </p>
     </div>
 
-    <div class="feature-card">
-      <i class="fas fa-file-contract"></i>
-      <h3>Rights Management</h3>
+    <!-- RIGHT -->
+    <div class="service-menu">
+      <h3>OUR SERVICES</h3>
+
+      <div class="service-item active" onclick="showService(0)">Maximising Royalties</div>
+      <div class="service-item" onclick="showService(1)">Rights Management</div>
+      <div class="service-item" onclick="showService(2)">Licensing & Sync</div>
+      <div class="service-item" onclick="showService(3)">Transparent Reporting</div>
+      <div class="service-item" onclick="showService(4)">Personalised Support</div>
+
     </div>
 
-    <div class="feature-card">
-      <i class="fas fa-music"></i>
-      <h3>Licensing & Sync</h3>
-    </div>
-
-    <div class="feature-card">
-      <i class="fas fa-chart-line"></i>
-      <h3>Transparent Reporting</h3>
-    </div>
-
-    <div class="feature-card">
-      <i class="fas fa-user-friends"></i>
-      <h3>Personalised Support</h3>
-    </div>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="contact-footer">
+    <p>Copyright © 2022 Mokima Publishing. | All Rights Reserved.</p>
+  </footer>
+
 </div>
 
-<!-- CTA -->
-<div class="cta-section">
-  <h2>Let’s Work Together</h2>
-  <p>We look forward to supporting your journey in the music industry.</p>
-  <a href="contact.php">Contact Us</a>
-</div>
+<script>
 
-<!-- FOOTER -->
-<footer>
-  <p>Copyright © 2022 Mokima Publishing. All Rights Reserved.</p>
+const services = [
+  {
+    title: "Maximising Royalties",
+    text: "We ensure you receive every cent owed by tracking, collecting, and optimising your royalty streams across all platforms and territories."
+  },
+  {
+    title: "Rights Management",
+    text: "We manage your publishing rights, ensuring your intellectual property is protected and properly registered globally."
+  },
+  {
+    title: "Licensing & Sync",
+    text: "We place your music in film, TV, adverts, and digital media opportunities to generate additional revenue streams."
+  },
+  {
+    title: "Transparent Reporting",
+    text: "We provide clear, detailed royalty statements so you always understand your earnings and usage."
+  },
+  {
+    title: "Personalised Support",
+    text: "We work closely with each client to provide tailored publishing strategies and career guidance."
+  }
+];
 
-  <div class="socials">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-tiktok"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-  </div>
-</footer>
+function showService(index){
+  const detail = document.getElementById("serviceDetails");
+
+  detail.innerHTML = `
+    <h3>${services[index].title}</h3>
+    <p>${services[index].text}</p>
+  `;
+
+  document.querySelectorAll(".service-item").forEach((el,i)=>{
+    el.classList.toggle("active", i === index);
+  });
+}
+
+</script>
 
 </body>
 </html>
