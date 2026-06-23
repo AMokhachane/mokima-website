@@ -1,7 +1,12 @@
 <?php
 include "db.php";
 
-$result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
+// 1. Fetch exactly the 3 most recent posts for the premium viewport grid
+$result = $conn->query("SELECT * FROM news ORDER BY created_at DESC LIMIT 3");
+
+// 2. Check if a 4th post exists to dynamically render the "More News" navigation element
+$count_check = $conn->query("SELECT COUNT(*) as total FROM news");
+$total_news = $count_check->fetch_assoc()['total'];
 ?>
 
 <!DOCTYPE html>
@@ -27,13 +32,12 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       height: 100vh;
       background: #e6e6e6;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow: hidden; /* Prevents body scroll entirely */
+      overflow: hidden; 
     }
 
-    /* FIXED SCREEN CONTAINER */
     .news-page {
       height: 100vh;
-      padding: 100px 20px 20px; /* Snugger padding to respect header space */
+      padding: 100px 20px 20px; 
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -43,7 +47,7 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
     .header-container {
       text-align: center;
       margin-bottom: 25px;
-      flex-shrink: 0; /* Keeps header sharp and non-compressed */
+      flex-shrink: 0; 
     }
 
     h1 {
@@ -63,7 +67,6 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       font-weight: 700;
     }
 
-    /* MAIN TRACK MODULE */
     .container-track {
       width: 100%;
       max-width: 1200px;
@@ -71,17 +74,16 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 0; /* Crucial fix for inner flex child calculation */
+      min-height: 0; 
     }
 
-    /* COMPACT DYNAMIC GRID */
     .news-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
       width: 100%;
       flex: 1;
-      min-height: 0; /* Forces grid to stay contained within viewport height limits */
+      min-height: 0; 
     }
 
     .news-card {
@@ -93,7 +95,7 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       flex-direction: column;
       transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
       border: 1px solid rgba(0, 0, 0, 0.03);
-      height: 100%; /* Spans exactly to fit the layout block */
+      height: 100%; 
     }
 
     .news-card:hover {
@@ -101,7 +103,6 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     }
 
-    /* Image scales contextually without bursting the container */
     .news-card img {
       width: 100%;
       flex: 1.1; 
@@ -136,7 +137,7 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       line-height: 1.3;
       flex-shrink: 0;
       display: -webkit-box;
-      -webkit-line-clamp: 2; /* Safety clamp for titles */
+      -webkit-line-clamp: 2; 
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
@@ -147,8 +148,6 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       line-height: 1.5;
       margin-bottom: 15px;
       flex: 1;
-      
-      /* Pure CSS truncation: dynamically cuts text to fit the viewport space */
       display: -webkit-box;
       -webkit-line-clamp: 3; 
       -webkit-box-orient: vertical;
@@ -168,7 +167,7 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       gap: 6px;
       transition: color 0.2s ease, transform 0.2s ease;
       flex-shrink: 0;
-      margin-top: auto; /* Locks read-more link precisely to the card base */
+      margin-top: auto; 
     }
 
     .read-more:hover {
@@ -176,7 +175,37 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       transform: translateX(4px);
     }
 
-    /* SYSTEM FOOTER */
+    /* ARCHIVE LINK BUTTON NAVIGATION */
+    .more-news-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+      flex-shrink: 0;
+    }
+
+    .btn-more-news {
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fff;
+      background: #111;
+      padding: 12px 28px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-more-news:hover {
+      background: #b88a1c;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(184, 138, 28, 0.25);
+    }
+
     .divider {
       width: 100%;
       height: 1px;
@@ -213,7 +242,6 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       transform: translateY(-2px);
     }
 
-    /* MOBILE STANDARDS (reverts to natural scrolling so cards don't crush) */
     @media (max-width: 1024px) {
       body {
         overflow: auto;
@@ -265,34 +293,36 @@ $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
       <?php while ($row = $result->fetch_assoc()) { ?>
 
         <div class="news-card">
-
           <img src="assets/<?php echo $row['image']; ?>" alt="News Image">
-
           <div class="news-content">
-
             <div class="news-meta">
               Press Release · <?php echo date("d M Y", strtotime($row['created_at'])); ?>
             </div>
-
             <div class="news-title">
               <?php echo $row['title']; ?>
             </div>
-
             <div class="news-excerpt">
               <?php echo substr($row['content'], 0, 150); ?>...
             </div>
-
             <a href="view.php?id=<?php echo $row['id']; ?>" class="read-more">
               Read More <i class="fa-solid fa-arrow-right-long"></i>
             </a>
-
           </div>
-
         </div>
 
       <?php } ?>
 
     </div>
+
+    <!-- DYNAMICALLY INJECTED ARCHIVE TRIGGER BUTTON -->
+    <?php if ($total_news > 3) { ?>
+      <div class="more-news-container">
+        <a href="archive.php" class="btn-more-news">
+          More News <i class="fa-solid fa-layer-group"></i>
+        </a>
+      </div>
+    <?php } ?>
+
     <div class="divider"></div>
 
     <footer class="contact-footer">
